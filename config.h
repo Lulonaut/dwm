@@ -33,7 +33,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "discord",  NULL,	      NULL,	      1 << 1,       0, 	          1 },
+	{ "discord",  NULL,	      NULL,	      0,            0, 	          1 },
 };
 
 static const char *const autostart[] = {
@@ -45,6 +45,8 @@ static const char *const autostart[] = {
     "pipewire", NULL,
     "pipewire-pulse", NULL,
     "pipewire-media-session", NULL,
+    "refreshbg", NULL,
+    "trayfix", NULL
 };
 
 
@@ -78,6 +80,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[] = {"brave", NULL };
 static const char *roficmd[] = { "rofi" , "-show", "run", NULL };
+static const char *fmcmd[] = { "pcmanfm" , NULL};
 static const char *powermenucmd[] = { "sh", "-c", "~/.config/i3blocks/scripts/powermenu", NULL };
 static const char *musicpausecmd[] = { "playerctl", "play-pause", NULL };
 static const char *musicnextcmd[] = { "playerctl", "next", NULL };
@@ -88,6 +91,7 @@ static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-1%"
 static Key keys[] = {
 	{ MODKEY,                       XK_p,                                   spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,                              spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_e,                                   spawn,          {.v = fmcmd} },
 	{ MODKEY,                       XK_b,                                   spawn,     	    {.v = browsercmd } },
 	{ MODKEY|ShiftMask,		        XK_e,	                                spawn,	        {.v = powermenucmd } },
 	{ 0,				            XF86XK_AudioPlay,                       spawn,          {.v = musicpausecmd } },
