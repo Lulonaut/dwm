@@ -46,7 +46,8 @@ static const char *const autostart[] = {
     "pipewire-pulse", NULL,
     "pipewire-media-session", NULL,
     "refreshbg", NULL,
-    "trayfix", NULL
+    "trayfix", NULL,
+    "redshift", NULL
 };
 
 
@@ -81,6 +82,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[] = {"brave", NULL };
 static const char *roficmd[] = { "rofi" , "-show", "run", NULL };
 static const char *fmcmd[] = { "pcmanfm" , NULL};
+static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *powermenucmd[] = { "sh", "-c", "~/.config/i3blocks/scripts/powermenu", NULL };
 static const char *musicpausecmd[] = { "playerctl", "play-pause", NULL };
 static const char *musicnextcmd[] = { "playerctl", "next", NULL };
@@ -93,6 +95,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return,                              spawn,          {.v = termcmd } },
     { MODKEY,                       XK_e,                                   spawn,          {.v = fmcmd} },
 	{ MODKEY,                       XK_b,                                   spawn,     	    {.v = browsercmd } },
+    { MODKEY,                       XK_Print,                               spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,		        XK_e,	                                spawn,	        {.v = powermenucmd } },
 	{ 0,				            XF86XK_AudioPlay,                       spawn,          {.v = musicpausecmd } },
 	{ 0, 				            XF86XK_AudioNext,                       spawn,          {.v = musicnextcmd } },

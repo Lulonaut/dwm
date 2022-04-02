@@ -65,7 +65,6 @@ sub playerctl {
 
     push(@metadata, $title) if $title;
     
-    print(" ");
     print(join(" - ", @metadata)) if @metadata;
     print("\n");
 }
