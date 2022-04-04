@@ -46,8 +46,7 @@ static const char *const autostart[] = {
     "pipewire-pulse", NULL,
     "pipewire-media-session", NULL,
     "refreshbg", NULL,
-    "trayfix", NULL,
-    "redshift", NULL
+    "trayfix", NULL
 };
 
 
