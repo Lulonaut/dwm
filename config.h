@@ -6,7 +6,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 0;     /* 0 means no systray */
+static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 0;     /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
@@ -39,14 +39,14 @@ static const Rule rules[] = {
 static const char *const autostart[] = {
 	"dunst", NULL,
 	"picom", "-config", "~/.config/picom/picom.conf", "-b", "--no-fading-open-close", "-I 1", "-O 1", NULL,
-	"discord-canary", NULL,
+	"discord", NULL,
 	"sh", "-c", "~/.config/screenlayout.sh", NULL,
     "dwmblocks", NULL,
     "pipewire", NULL,
     "pipewire-pulse", NULL,
-    "pipewire-media-session", NULL,
+	"wireplumber", NULL,
     "refreshbg", NULL,
-    "trayfix", NULL
+	"xfce4-clipman", NULL,
 };
 
 
@@ -78,7 +78,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[] = {"brave", NULL };
+static const char *browsercmd[] = {"firefox", NULL };
 static const char *roficmd[] = { "rofi" , "-show", "run", NULL };
 static const char *fmcmd[] = { "pcmanfm" , NULL};
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
