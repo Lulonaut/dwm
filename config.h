@@ -32,20 +32,23 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "discord",  NULL,	      NULL,	      0,            0, 	          1 },
+	{ "kdeconnect.app", NULL, NULL,       1 << 7,       0,             0},
 };
 
 static const char *const autostart[] = {
 	"dunst", NULL,
-	"picom", "-config", "~/.config/picom/picom.conf", "-b", "--no-fading-open-close", "-I 1", "-O 1", NULL,
+	"picom", "-config", "~/.config/picom/picom.conf", "-b", NULL,
 	"discord", NULL,
 	"sh", "-c", "~/.config/screenlayout.sh", NULL,
-    "dwmblocks", NULL,
-    "pipewire", NULL,
-    "pipewire-pulse", NULL,
+  "dwmblocks", NULL,
+  "pipewire", NULL,
+  "pipewire-pulse", NULL,
 	"wireplumber", NULL,
-    "refreshbg", NULL,
+  "refreshbg", NULL,
 	"xfce4-clipman", NULL,
-	"sxhkd", NULL
+	"sxhkd", NULL,
+	"kblayout", NULL,
+	"kdeconnect-app", NULL
 };
 
 
