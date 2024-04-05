@@ -1,6 +1,6 @@
 #include <X11/XF86keysym.h>
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -30,9 +30,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "discord",  NULL,	      NULL,	      0,            0, 	          1 },
-	{ "kdeconnect.app", NULL, NULL,       1 << 7,       0,             0},
+	/* class                instance      title       tags mask     isfloating   monitor */
+	{ "discord",            NULL,	      NULL,	  0,            0, 	     1 },
+	{ "vesktop",            NULL,	      NULL,	  0,            0, 	     1 },
+	{ "kdeconnect.app",     NULL,         NULL,       1 << 7,       0,           0 },
+	{ "cantata",            NULL,         NULL,       1 << 8,       0,           0 },
+	{ "steam",              NULL,         NULL,       0,            1,          -1 }
+
 };
 
 /* layout(s) */
@@ -82,7 +86,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,                                   setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,                                   setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Tab,                                 zoom,           {0} },
-	{ ControlMask, 			        XK_q,	                                killclient,     {0} },
+	{ MODKEY, 			        XK_q,	                                killclient,     {0} },
 	{ MODKEY,                       XK_t,                                   setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                                   setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,                                   setlayout,      {.v = &layouts[2]} },
